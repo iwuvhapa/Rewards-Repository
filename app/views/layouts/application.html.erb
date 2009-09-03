@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <meta name="robots" content="noindex" />
+
+    <title><%= @pagetitle %></title>
+		<%= stylesheet_link_tag 'rewards_styles' %>
+  </head>
+  <body>
+		<div id='pagewrapper'>
+			<div id='header'>
+				<img src="/images/title.jpg" alt="Title">
+		  </div>
+			<div id='navbar'>
+				<ul>
+					<li><%= link_to ':: Home', {:controller => 'pages', :action => 'home'} %></li>
+					<li><%= link_to ':: Register', {:controller => 'users', :action => 'new'} %></li>
+					<li><%= link_to ':: Order Products', {:controller => 'pages', :action => 'orders'} %></li>
+					<li><% if logged_in? %>
+							<%= link_to ":: Log Out", logout_path %>
+					    <% else %>
+					        <%= link_to ":: Log In", login_path %>
+					    <% end %>
+					</li>
+				</ul>
+		  <div>
+		</div>
+		<div id='content'>
+		<h2><%= flash[:notice] %>
+        <%= yield %>
+		</div>
+		<div id='footer'>
+			<p>Copyright &#169; 2009 Pravana Naturceuticals | Questions? Email: webmaster@pravana.com Call Pravana Offices: 866-883-7094 </p>
+		</div>
+  </body>
+</html>

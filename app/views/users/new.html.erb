@@ -1,0 +1,63 @@
+<h1>Register Your Salon In The Rewards Program!</h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+<% form_for :user, :url => users_path do |f| -%>
+<p><%= label_tag 'login' %><br/>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'your_full_name' %><br/>
+<%= f.text_field :name %></p>
+
+<p><%= label_tag 'email' %><br/>
+<%= f.text_field :email %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= label_tag 'salon_name' %><br/>
+<%= f.text_field :salon_name %></p>
+
+<p><%= label_tag 'salon_address' %><br/>
+<%= f.text_field :salon_address %></p>
+
+<p><%= label_tag 'city' %><br/>
+<%= f.text_field :city %></p>
+
+<p><%= label_tag 'state' %><br/>
+<%= f.select(:state, options_for_select([['Alabama', 'AL'], ['Alaska', 'AK'], ['Arizona', 'AZ'], ['Arkansas', 'AR'], ['California', 'CA'], ['Colorado', 'CO'], ['Connecticut', 'CT'], ['Delaware', 'DE'], ['District of Columbia', 'DC'], ['Florida', 'FL'], ['Georgia', 'GA'], ['Hawaii', 'HI'], ['Idaho', 'ID'], ['Illinois', 'IL'], ['Indiana', 'IN'], ['Iowa', 'IA'], ['Kansas', 'KS'], ['Kentucky', 'KY'], ['Louisiana', 'LA'], ['Maine', 'ME'], ['Maryland', 'MD'], ['Massachusetts', 'MA'], ['Michigan', 'MI'], ['Minnesota', 'MN'], ['Mississippi', 'MS'], ['Missouri', 'MO'], ['Montana', 'MT'], ['Nebraska', 'NE'], ['Nevada', 'NV'], ['New Hampshire', 'NH'], ['New Jersey', 'NJ'], ['New Mexico', 'NM'], ['New York', 'NY'], ['North Carolina', 'NC'], ['North Dakota', 'ND'], ['Ohio', 'OH'], ['Oklahoma', 'OK'], ['Oregon', 'OR'], ['Pennsylvania', 'PA'], ['Rhode Island', 'RI'], ['South Carolina', 'SC'], ['South Dakota', 'SD'], ['Tennessee', 'TN'], ['Texas', 'TX'], ['Utah', 'UT'], ['Vermont', 'VT'], ['Virginia', 'VA'], ['Washington', 'WA'], ['West Virginia', 'WV'], ['Wisconsin', 'WI'], ['Wyoming', 'WY']], 'AL')) %>
+
+<p><%= label_tag 'zip' %><br/>
+<%= f.text_field :zip %></p>
+
+<p><%= label_tag 'salon_owner' %><br/>
+<%= f.text_field :salon_owner %></p>
+
+<p><%= label_tag 'telephone_(please_include_area_code)' %><br/>
+<%= f.text_field :telephone %></p>
+
+<p><%= label_tag 'cosmetology_license_number' %><br/>
+<%= f.text_field :license_number %></p>
+
+<p><%= label_tag 'salon_website' %><br/>
+<%= f.text_field :website %></p>
+
+<p><%= label_tag 'distributor' %><br/>
+<%= f.select(:distributor, options_for_select([['Beauty Alliance', 'Beauty Alliance'], ['State Beauty', 'State Beauty'], ['Ace Beauty', 'Ace Beauty'], ['Gulf States', 'Gulf States'], ['Columbia Beauty', 'Columbia Beauty'], ['Stylines', 'Stylines']], 'Beauty Alliance')) %>
+
+<p><%= label_tag 'sales_consultant' %><br/>
+<%= f.text_field :sales_consultant %></p>
+
+<p><%= label_tag 'products_used' %><br/>
+<%= f.select(:products_used, options_for_select([['Color Ensure', 'Color Ensure'], ['Hydrating', 'Hydrating'], ['Volumizing', 'Volumizing'], ['Pure Light Shampoo and Conditioner', 'Pure Light Shampoo and Conditioner'], ['Keratin Fusion Shampoo and Conditioner', 'Keratin Fusion Shampoo and Conditioner'], ['Chromasilk', 'Chromasilk'], ['Chromasilk Vivids', 'Chromasilk Vivids'], ['Silk Degrees', 'Silk Degrees'], ['Color Extractor', 'Color Extractor'], ['Pure Light', 'Pure Light'], ['Style and Design', 'Style and Design'], ['Keratin Fusion Texture Control', 'Keratin Fusion Texture Control'], ['BIOJEN 9', 'BIOJEN 9']], 'Color Ensure'), :multiple => true ) %>
+
+<p><%= label_tag 'number_of_stylists' %><br/>
+<%= f.text_field :number_of_stylists %></p>
+
+<p><%= label_tag 'number_of_stations' %><br/>
+<%= f.text_field :number_of_stations %></p>
+<p><%= submit_tag 'Sign up!' %></p>
+<% end -%>
